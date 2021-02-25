@@ -1,0 +1,708 @@
+Distance_Meters,Youbike_Station,Metro_Station
+3200,Taipei City Hospital Renai Branch,MRT Chiang Kai-Shek Memorial Hall
+500,Taipei City Hospital Renai Branch,MRT Daan
+1300,Taipei City Hospital Renai Branch,MRT Daan Park
+1800,Taipei City Hospital Renai Branch,MRT Dongmen
+3300,Taipei City Hospital Renai Branch,MRT Gongguan
+3300,Taipei City Hospital Renai Branch,MRT Guting
+5500,Taipei City Hospital Renai Branch,MRT Jingmei
+2800,Taipei City Hospital Renai Branch,MRT Linguang
+1900,Taipei City Hospital Renai Branch,MRT Liuzhangli
+1700,Taipei City Hospital Renai Branch,MRT Nanjing Fuxing
+2500,Taipei City Hospital Renai Branch,MRT Shandao Temple
+2500,Taipei City Hospital Renai Branch,MRT Songjiang Nanjing
+1600,Taipei City Hospital Renai Branch,MRT Sun Yat-Sen Memorial Hall
+2000,Taipei City Hospital Renai Branch,MRT Taipei 101 World Trade Center
+2400,Taipei City Hospital Renai Branch,MRT Taipei City Hall
+3100,Taipei City Hospital Renai Branch,MRT Taipower Building
+1400,Taipei City Hospital Renai Branch,MRT Technology Building
+4500,Taipei City Hospital Renai Branch,MRT Wanlong
+5000,Taipei City Hospital Renai Branch,MRT Xinhai
+1000,Taipei City Hospital Renai Branch,MRT Xinyi Anhe
+700,Taipei City Hospital Renai Branch,MRT Zhongxiao Dunhua
+700,Taipei City Hospital Renai Branch,MRT Zhongxiao Fuxing
+1500,Taipei City Hospital Renai Branch,MRT Zhongxiao Xinsheng
+2400,Xinhai & Xinsheng Intersection,MRT Chiang Kai-Shek Memorial Hall
+1900,Xinhai & Xinsheng Intersection,MRT Daan
+1400,Xinhai & Xinsheng Intersection,MRT Daan Park
+1600,Xinhai & Xinsheng Intersection,MRT Dongmen
+1000,Xinhai & Xinsheng Intersection,MRT Gongguan
+1400,Xinhai & Xinsheng Intersection,MRT Guting
+3600,Xinhai & Xinsheng Intersection,MRT Jingmei
+2900,Xinhai & Xinsheng Intersection,MRT Linguang
+2100,Xinhai & Xinsheng Intersection,MRT Liuzhangli
+4000,Xinhai & Xinsheng Intersection,MRT Nanjing Fuxing
+3300,Xinhai & Xinsheng Intersection,MRT Shandao Temple
+3400,Xinhai & Xinsheng Intersection,MRT Songjiang Nanjing
+4200,Xinhai & Xinsheng Intersection,MRT Sun Yat-Sen Memorial Hall
+3600,Xinhai & Xinsheng Intersection,MRT Taipei 101 World Trade Center
+4600,Xinhai & Xinsheng Intersection,MRT Taipei City Hall
+700,Xinhai & Xinsheng Intersection,MRT Taipower Building
+1400,Xinhai & Xinsheng Intersection,MRT Technology Building
+2600,Xinhai & Xinsheng Intersection,MRT Wanlong
+4100,Xinhai & Xinsheng Intersection,MRT Xinhai
+2700,Xinhai & Xinsheng Intersection,MRT Xinyi Anhe
+3300,Xinhai & Xinsheng Intersection,MRT Zhongxiao Dunhua
+3300,Xinhai & Xinsheng Intersection,MRT Zhongxiao Fuxing
+2200,Xinhai & Xinsheng Intersection,MRT Zhongxiao Xinsheng
+2400,Roosevelt & Xinsheng S. Intersection,MRT Chiang Kai-Shek Memorial Hall
+2700,Roosevelt & Xinsheng S. Intersection,MRT Daan
+2100,Roosevelt & Xinsheng S. Intersection,MRT Daan Park
+2200,Roosevelt & Xinsheng S. Intersection,MRT Dongmen
+210,Roosevelt & Xinsheng S. Intersection,MRT Gongguan
+1500,Roosevelt & Xinsheng S. Intersection,MRT Guting
+2800,Roosevelt & Xinsheng S. Intersection,MRT Jingmei
+3100,Roosevelt & Xinsheng S. Intersection,MRT Linguang
+2300,Roosevelt & Xinsheng S. Intersection,MRT Liuzhangli
+4800,Roosevelt & Xinsheng S. Intersection,MRT Nanjing Fuxing
+4000,Roosevelt & Xinsheng S. Intersection,MRT Shandao Temple
+4200,Roosevelt & Xinsheng S. Intersection,MRT Songjiang Nanjing
+4600,Roosevelt & Xinsheng S. Intersection,MRT Sun Yat-Sen Memorial Hall
+3900,Roosevelt & Xinsheng S. Intersection,MRT Taipei 101 World Trade Center
+4900,Roosevelt & Xinsheng S. Intersection,MRT Taipei City Hall
+650,Roosevelt & Xinsheng S. Intersection,MRT Taipower Building
+2000,Roosevelt & Xinsheng S. Intersection,MRT Technology Building
+1800,Roosevelt & Xinsheng S. Intersection,MRT Wanlong
+4100,Roosevelt & Xinsheng S. Intersection,MRT Xinhai
+3600,Roosevelt & Xinsheng S. Intersection,MRT Xinyi Anhe
+4100,Roosevelt & Xinsheng S. Intersection,MRT Zhongxiao Dunhua
+4100,Roosevelt & Xinsheng S. Intersection,MRT Zhongxiao Fuxing
+2900,Roosevelt & Xinsheng S. Intersection,MRT Zhongxiao Xinsheng
+1300,NTNU Library,MRT Chiang Kai-Shek Memorial Hall
+2100,NTNU Library,MRT Daan
+1400,NTNU Library,MRT Daan Park
+1000,NTNU Library,MRT Dongmen
+1700,NTNU Library,MRT Gongguan
+550,NTNU Library,MRT Guting
+4300,NTNU Library,MRT Jingmei
+3400,NTNU Library,MRT Linguang
+2500,NTNU Library,MRT Liuzhangli
+4000,NTNU Library,MRT Nanjing Fuxing
+2700,NTNU Library,MRT Shandao Temple
+3200,NTNU Library,MRT Songjiang Nanjing
+4500,NTNU Library,MRT Sun Yat-Sen Memorial Hall
+4000,NTNU Library,MRT Taipei 101 World Trade Center
+5000,NTNU Library,MRT Taipei City Hall
+650,NTNU Library,MRT Taipower Building
+1700,NTNU Library,MRT Technology Building
+3200,NTNU Library,MRT Wanlong
+5500,NTNU Library,MRT Xinhai
+3100,NTNU Library,MRT Xinyi Anhe
+3500,NTNU Library,MRT Zhongxiao Dunhua
+3500,NTNU Library,MRT Zhongxiao Fuxing
+2000,NTNU Library,MRT Zhongxiao Xinsheng
+2800,MRT Daan Sta.,MRT Chiang Kai-Shek Memorial Hall
+550,MRT Daan Sta.,MRT Daan Park
+1200,MRT Daan Sta.,MRT Dongmen
+2700,MRT Daan Sta.,MRT Gongguan
+2600,MRT Daan Sta.,MRT Guting
+4900,MRT Daan Sta.,MRT Jingmei
+2500,MRT Daan Sta.,MRT Linguang
+1700,MRT Daan Sta.,MRT Liuzhangli
+2000,MRT Daan Sta.,MRT Nanjing Fuxing
+2800,MRT Daan Sta.,MRT Shandao Temple
+2800,MRT Daan Sta.,MRT Songjiang Nanjing
+2200,MRT Daan Sta.,MRT Sun Yat-Sen Memorial Hall
+1800,MRT Daan Sta.,MRT Taipei 101 World Trade Center
+2800,MRT Daan Sta.,MRT Taipei City Hall
+2600,MRT Daan Sta.,MRT Taipower Building
+800,MRT Daan Sta.,MRT Technology Building
+3900,MRT Daan Sta.,MRT Wanlong
+4400,MRT Daan Sta.,MRT Xinhai
+800,MRT Daan Sta.,MRT Xinyi Anhe
+1300,MRT Daan Sta.,MRT Zhongxiao Dunhua
+1300,MRT Daan Sta.,MRT Zhongxiao Fuxing
+1700,MRT Daan Sta.,MRT Zhongxiao Xinsheng
+1600,MRT Taipower Building Sta. (Exit 2),MRT Chiang Kai-Shek Memorial Hall
+2600,MRT Taipower Building Sta. (Exit 2),MRT Daan
+2000,MRT Taipower Building Sta. (Exit 2),MRT Daan Park
+1600,MRT Taipower Building Sta. (Exit 2),MRT Dongmen
+850,MRT Taipower Building Sta. (Exit 2),MRT Gongguan
+700,MRT Taipower Building Sta. (Exit 2),MRT Guting
+3500,MRT Taipower Building Sta. (Exit 2),MRT Jingmei
+3500,MRT Taipower Building Sta. (Exit 2),MRT Linguang
+2800,MRT Taipower Building Sta. (Exit 2),MRT Liuzhangli
+4700,MRT Taipower Building Sta. (Exit 2),MRT Nanjing Fuxing
+3200,MRT Taipower Building Sta. (Exit 2),MRT Shandao Temple
+3800,MRT Taipower Building Sta. (Exit 2),MRT Songjiang Nanjing
+4900,MRT Taipower Building Sta. (Exit 2),MRT Sun Yat-Sen Memorial Hall
+4400,MRT Taipower Building Sta. (Exit 2),MRT Taipei 101 World Trade Center
+5400,MRT Taipower Building Sta. (Exit 2),MRT Taipei City Hall
+2100,MRT Taipower Building Sta. (Exit 2),MRT Technology Building
+2400,MRT Taipower Building Sta. (Exit 2),MRT Wanlong
+4700,MRT Taipower Building Sta. (Exit 2),MRT Xinhai
+3400,MRT Taipower Building Sta. (Exit 2),MRT Xinyi Anhe
+4000,MRT Taipower Building Sta. (Exit 2),MRT Zhongxiao Dunhua
+4000,MRT Taipower Building Sta. (Exit 2),MRT Zhongxiao Fuxing
+2600,MRT Taipower Building Sta. (Exit 2),MRT Zhongxiao Xinsheng
+1500,MRT Dongmen Sta. (Exit 4),MRT Chiang Kai-Shek Memorial Hall
+1300,MRT Dongmen Sta. (Exit 4),MRT Daan
+600,MRT Dongmen Sta. (Exit 4),MRT Daan Park
+100,MRT Dongmen Sta. (Exit 4),MRT Dongmen
+2500,MRT Dongmen Sta. (Exit 4),MRT Gongguan
+1300,MRT Dongmen Sta. (Exit 4),MRT Guting
+5100,MRT Dongmen Sta. (Exit 4),MRT Jingmei
+4000,MRT Dongmen Sta. (Exit 4),MRT Linguang
+3100,MRT Dongmen Sta. (Exit 4),MRT Liuzhangli
+3200,MRT Dongmen Sta. (Exit 4),MRT Nanjing Fuxing
+1800,MRT Dongmen Sta. (Exit 4),MRT Shandao Temple
+2400,MRT Dongmen Sta. (Exit 4),MRT Songjiang Nanjing
+3700,MRT Dongmen Sta. (Exit 4),MRT Sun Yat-Sen Memorial Hall
+3400,MRT Dongmen Sta. (Exit 4),MRT Taipei 101 World Trade Center
+4300,MRT Dongmen Sta. (Exit 4),MRT Taipei City Hall
+1500,MRT Dongmen Sta. (Exit 4),MRT Taipower Building
+2000,MRT Dongmen Sta. (Exit 4),MRT Technology Building
+4100,MRT Dongmen Sta. (Exit 4),MRT Wanlong
+5600,MRT Dongmen Sta. (Exit 4),MRT Xinhai
+2400,MRT Dongmen Sta. (Exit 4),MRT Xinyi Anhe
+2800,MRT Dongmen Sta. (Exit 4),MRT Zhongxiao Dunhua
+2800,MRT Dongmen Sta. (Exit 4),MRT Zhongxiao Fuxing
+1100,MRT Dongmen Sta. (Exit 4),MRT Zhongxiao Xinsheng
+4000,Longmen Square,MRT Chiang Kai-Shek Memorial Hall
+1200,Longmen Square,MRT Daan
+2000,Longmen Square,MRT Daan Park
+2600,Longmen Square,MRT Dongmen
+4000,Longmen Square,MRT Gongguan
+4100,Longmen Square,MRT Guting
+6100,Longmen Square,MRT Jingmei
+3100,Longmen Square,MRT Linguang
+2300,Longmen Square,MRT Liuzhangli
+1700,Longmen Square,MRT Nanjing Fuxing
+2700,Longmen Square,MRT Shandao Temple
+2700,Longmen Square,MRT Songjiang Nanjing
+1000,Longmen Square,MRT Sun Yat-Sen Memorial Hall
+2100,Longmen Square,MRT Taipei 101 World Trade Center
+1700,Longmen Square,MRT Taipei City Hall
+3900,Longmen Square,MRT Taipower Building
+2200,Longmen Square,MRT Technology Building
+5000,Longmen Square,MRT Wanlong
+5300,Longmen Square,MRT Xinhai
+1200,Longmen Square,MRT Xinyi Anhe
+160,Longmen Square,MRT Zhongxiao Dunhua
+160,Longmen Square,MRT Zhongxiao Fuxing
+1700,Longmen Square,MRT Zhongxiao Xinsheng
+3600,Keelung & Changxing Intersection,MRT Chiang Kai-Shek Memorial Hall
+1800,Keelung & Changxing Intersection,MRT Daan
+2500,Keelung & Changxing Intersection,MRT Daan Park
+3000,Keelung & Changxing Intersection,MRT Dongmen
+1100,Keelung & Changxing Intersection,MRT Gongguan
+2600,Keelung & Changxing Intersection,MRT Guting
+3100,Keelung & Changxing Intersection,MRT Jingmei
+1800,Keelung & Changxing Intersection,MRT Linguang
+1100,Keelung & Changxing Intersection,MRT Liuzhangli
+4000,Keelung & Changxing Intersection,MRT Nanjing Fuxing
+4700,Keelung & Changxing Intersection,MRT Shandao Temple
+4700,Keelung & Changxing Intersection,MRT Songjiang Nanjing
+3300,Keelung & Changxing Intersection,MRT Sun Yat-Sen Memorial Hall
+2600,Keelung & Changxing Intersection,MRT Taipei 101 World Trade Center
+3600,Keelung & Changxing Intersection,MRT Taipei City Hall
+1800,Keelung & Changxing Intersection,MRT Taipower Building
+1100,Keelung & Changxing Intersection,MRT Technology Building
+2000,Keelung & Changxing Intersection,MRT Wanlong
+3000,Keelung & Changxing Intersection,MRT Xinhai
+2300,Keelung & Changxing Intersection,MRT Xinyi Anhe
+3000,Keelung & Changxing Intersection,MRT Zhongxiao Dunhua
+3000,Keelung & Changxing Intersection,MRT Zhongxiao Fuxing
+3500,Keelung & Changxing Intersection,MRT Zhongxiao Xinsheng
+2600,MRT Gongguan Sta.(Exit 2),MRT Chiang Kai-Shek Memorial Hall
+2700,MRT Gongguan Sta.(Exit 2),MRT Daan
+2300,MRT Gongguan Sta.(Exit 2),MRT Daan Park
+2400,MRT Gongguan Sta.(Exit 2),MRT Dongmen
+16,MRT Gongguan Sta.(Exit 2),MRT Gongguan
+1700,MRT Gongguan Sta.(Exit 2),MRT Guting
+2600,MRT Gongguan Sta.(Exit 2),MRT Jingmei
+2900,MRT Gongguan Sta.(Exit 2),MRT Linguang
+2200,MRT Gongguan Sta.(Exit 2),MRT Liuzhangli
+4800,MRT Gongguan Sta.(Exit 2),MRT Nanjing Fuxing
+4200,MRT Gongguan Sta.(Exit 2),MRT Shandao Temple
+4400,MRT Gongguan Sta.(Exit 2),MRT Songjiang Nanjing
+4400,MRT Gongguan Sta.(Exit 2),MRT Sun Yat-Sen Memorial Hall
+3800,MRT Gongguan Sta.(Exit 2),MRT Taipei 101 World Trade Center
+4800,MRT Gongguan Sta.(Exit 2),MRT Taipei City Hall
+850,MRT Gongguan Sta.(Exit 2),MRT Taipower Building
+1900,MRT Gongguan Sta.(Exit 2),MRT Technology Building
+1600,MRT Gongguan Sta.(Exit 2),MRT Wanlong
+3900,MRT Gongguan Sta.(Exit 2),MRT Xinhai
+3400,MRT Gongguan Sta.(Exit 2),MRT Xinyi Anhe
+4000,MRT Gongguan Sta.(Exit 2),MRT Zhongxiao Dunhua
+4000,MRT Gongguan Sta.(Exit 2),MRT Zhongxiao Fuxing
+3100,MRT Gongguan Sta.(Exit 2),MRT Zhongxiao Xinsheng
+2100,MRT Daan Park Sta.,MRT Chiang Kai-Shek Memorial Hall
+550,MRT Daan Park Sta.,MRT Daan
+500,MRT Daan Park Sta.,MRT Dongmen
+2300,MRT Daan Park Sta.,MRT Gongguan
+1900,MRT Daan Park Sta.,MRT Guting
+5000,MRT Daan Park Sta.,MRT Jingmei
+3400,MRT Daan Park Sta.,MRT Linguang
+2600,MRT Daan Park Sta.,MRT Liuzhangli
+2800,MRT Daan Park Sta.,MRT Nanjing Fuxing
+2200,MRT Daan Park Sta.,MRT Shandao Temple
+2200,MRT Daan Park Sta.,MRT Songjiang Nanjing
+3000,MRT Daan Park Sta.,MRT Sun Yat-Sen Memorial Hall
+2700,MRT Daan Park Sta.,MRT Taipei 101 World Trade Center
+3600,MRT Daan Park Sta.,MRT Taipei City Hall
+2000,MRT Daan Park Sta.,MRT Taipower Building
+1400,MRT Daan Park Sta.,MRT Technology Building
+3900,MRT Daan Park Sta.,MRT Wanlong
+5100,MRT Daan Park Sta.,MRT Xinhai
+1600,MRT Daan Park Sta.,MRT Xinyi Anhe
+2100,MRT Daan Park Sta.,MRT Zhongxiao Dunhua
+2100,MRT Daan Park Sta.,MRT Zhongxiao Fuxing
+1000,MRT Daan Park Sta.,MRT Zhongxiao Xinsheng
+4800,MRT Linguang Sta. (Exit 2),MRT Chiang Kai-Shek Memorial Hall
+2600,MRT Linguang Sta. (Exit 2),MRT Daan
+3500,MRT Linguang Sta. (Exit 2),MRT Daan Park
+4000,MRT Linguang Sta. (Exit 2),MRT Dongmen
+2900,MRT Linguang Sta. (Exit 2),MRT Gongguan
+4000,MRT Linguang Sta. (Exit 2),MRT Guting
+4900,MRT Linguang Sta. (Exit 2),MRT Jingmei
+120,MRT Linguang Sta. (Exit 2),MRT Linguang
+1100,MRT Linguang Sta. (Exit 2),MRT Liuzhangli
+4800,MRT Linguang Sta. (Exit 2),MRT Nanjing Fuxing
+5600,MRT Linguang Sta. (Exit 2),MRT Shandao Temple
+5600,MRT Linguang Sta. (Exit 2),MRT Songjiang Nanjing
+2900,MRT Linguang Sta. (Exit 2),MRT Sun Yat-Sen Memorial Hall
+2200,MRT Linguang Sta. (Exit 2),MRT Taipei 101 World Trade Center
+3200,MRT Linguang Sta. (Exit 2),MRT Taipei City Hall
+3600,MRT Linguang Sta. (Exit 2),MRT Taipower Building
+2100,MRT Linguang Sta. (Exit 2),MRT Technology Building
+3900,MRT Linguang Sta. (Exit 2),MRT Wanlong
+3300,MRT Linguang Sta. (Exit 2),MRT Xinhai
+2100,MRT Linguang Sta. (Exit 2),MRT Xinyi Anhe
+3100,MRT Linguang Sta. (Exit 2),MRT Zhongxiao Dunhua
+3100,MRT Linguang Sta. (Exit 2),MRT Zhongxiao Fuxing
+4500,MRT Linguang Sta. (Exit 2),MRT Zhongxiao Xinsheng
+8100,LiuGong Park,MRT Chiang Kai-Shek Memorial Hall
+7800,LiuGong Park,MRT Daan
+7800,LiuGong Park,MRT Daan Park
+7900,LiuGong Park,MRT Dongmen
+5500,LiuGong Park,MRT Gongguan
+7200,LiuGong Park,MRT Guting
+3000,LiuGong Park,MRT Jingmei
+7700,LiuGong Park,MRT Linguang
+7000,LiuGong Park,MRT Liuzhangli
+9900,LiuGong Park,MRT Nanjing Fuxing
+9700,LiuGong Park,MRT Shandao Temple
+9800,LiuGong Park,MRT Songjiang Nanjing
+9200,LiuGong Park,MRT Sun Yat-Sen Memorial Hall
+8600,LiuGong Park,MRT Taipei 101 World Trade Center
+9600,LiuGong Park,MRT Taipei City Hall
+6300,LiuGong Park,MRT Taipower Building
+7000,LiuGong Park,MRT Technology Building
+3900,LiuGong Park,MRT Wanlong
+5400,LiuGong Park,MRT Xinhai
+8300,LiuGong Park,MRT Xinyi Anhe
+8900,LiuGong Park,MRT Zhongxiao Dunhua
+8900,LiuGong Park,MRT Zhongxiao Fuxing
+8600,LiuGong Park,MRT Zhongxiao Xinsheng
+3000,MRT Technology Bldg. Sta.,MRT Chiang Kai-Shek Memorial Hall
+800,MRT Technology Bldg. Sta.,MRT Daan
+1400,MRT Technology Bldg. Sta.,MRT Daan Park
+2000,MRT Technology Bldg. Sta.,MRT Dongmen
+1900,MRT Technology Bldg. Sta.,MRT Gongguan
+2300,MRT Technology Bldg. Sta.,MRT Guting
+4200,MRT Technology Bldg. Sta.,MRT Jingmei
+2000,MRT Technology Bldg. Sta.,MRT Linguang
+1100,MRT Technology Bldg. Sta.,MRT Liuzhangli
+2900,MRT Technology Bldg. Sta.,MRT Nanjing Fuxing
+3700,MRT Technology Bldg. Sta.,MRT Shandao Temple
+3700,MRT Technology Bldg. Sta.,MRT Songjiang Nanjing
+3100,MRT Technology Bldg. Sta.,MRT Sun Yat-Sen Memorial Hall
+2500,MRT Technology Bldg. Sta.,MRT Taipei 101 World Trade Center
+3600,MRT Technology Bldg. Sta.,MRT Taipei City Hall
+2000,MRT Technology Bldg. Sta.,MRT Taipower Building
+3100,MRT Technology Bldg. Sta.,MRT Wanlong
+3600,MRT Technology Bldg. Sta.,MRT Xinhai
+1700,MRT Technology Bldg. Sta.,MRT Xinyi Anhe
+2200,MRT Technology Bldg. Sta.,MRT Zhongxiao Dunhua
+2200,MRT Technology Bldg. Sta.,MRT Zhongxiao Fuxing
+2500,MRT Technology Bldg. Sta.,MRT Zhongxiao Xinsheng
+2000,Xinsheng & Heping Intersection,MRT Chiang Kai-Shek Memorial Hall
+1500,Xinsheng & Heping Intersection,MRT Daan
+950,Xinsheng & Heping Intersection,MRT Daan Park
+1200,Xinsheng & Heping Intersection,MRT Dongmen
+1400,Xinsheng & Heping Intersection,MRT Gongguan
+1300,Xinsheng & Heping Intersection,MRT Guting
+4000,Xinsheng & Heping Intersection,MRT Jingmei
+2800,Xinsheng & Heping Intersection,MRT Linguang
+1900,Xinsheng & Heping Intersection,MRT Liuzhangli
+3600,Xinsheng & Heping Intersection,MRT Nanjing Fuxing
+2900,Xinsheng & Heping Intersection,MRT Shandao Temple
+2900,Xinsheng & Heping Intersection,MRT Songjiang Nanjing
+3800,Xinsheng & Heping Intersection,MRT Sun Yat-Sen Memorial Hall
+3300,Xinsheng & Heping Intersection,MRT Taipei 101 World Trade Center
+4400,Xinsheng & Heping Intersection,MRT Taipei City Hall
+1100,Xinsheng & Heping Intersection,MRT Taipower Building
+1000,Xinsheng & Heping Intersection,MRT Technology Building
+3000,Xinsheng & Heping Intersection,MRT Wanlong
+4400,Xinsheng & Heping Intersection,MRT Xinhai
+2500,Xinsheng & Heping Intersection,MRT Xinyi Anhe
+3000,Xinsheng & Heping Intersection,MRT Zhongxiao Dunhua
+3000,Xinsheng & Heping Intersection,MRT Zhongxiao Fuxing
+1700,Xinsheng & Heping Intersection,MRT Zhongxiao Xinsheng
+4900,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Chiang Kai-Shek Memorial Hall
+2200,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Daan
+3000,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Daan Park
+3600,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Dongmen
+4400,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Gongguan
+5000,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Guting
+6400,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Jingmei
+2800,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Linguang
+2200,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Liuzhangli
+2400,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Nanjing Fuxing
+3500,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Shandao Temple
+3500,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Songjiang Nanjing
+4,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Sun Yat-Sen Memorial Hall
+1400,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Taipei 101 World Trade Center
+750,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Taipei City Hall
+4800,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Taipower Building
+3100,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Technology Building
+5300,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Wanlong
+5300,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Xinhai
+1400,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Xinyi Anhe
+600,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Zhongxiao Dunhua
+600,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Zhongxiao Fuxing
+2500,MRT S.Y.S Memorial Hall Stataion(Exit 2.),MRT Zhongxiao Xinsheng
+3800,MRT Xinyi Anhe Sta.,MRT Chiang Kai-Shek Memorial Hall
+800,MRT Xinyi Anhe Sta.,MRT Daan
+1600,MRT Xinyi Anhe Sta.,MRT Daan Park
+2300,MRT Xinyi Anhe Sta.,MRT Dongmen
+3400,MRT Xinyi Anhe Sta.,MRT Gongguan
+3600,MRT Xinyi Anhe Sta.,MRT Guting
+5300,MRT Xinyi Anhe Sta.,MRT Jingmei
+2000,MRT Xinyi Anhe Sta.,MRT Linguang
+1200,MRT Xinyi Anhe Sta.,MRT Liuzhangli
+2800,MRT Xinyi Anhe Sta.,MRT Nanjing Fuxing
+3800,MRT Xinyi Anhe Sta.,MRT Shandao Temple
+3800,MRT Xinyi Anhe Sta.,MRT Songjiang Nanjing
+1400,MRT Xinyi Anhe Sta.,MRT Sun Yat-Sen Memorial Hall
+1000,MRT Xinyi Anhe Sta.,MRT Taipei 101 World Trade Center
+1900,MRT Xinyi Anhe Sta.,MRT Taipei City Hall
+3400,MRT Xinyi Anhe Sta.,MRT Taipower Building
+1700,MRT Xinyi Anhe Sta.,MRT Technology Building
+4300,MRT Xinyi Anhe Sta.,MRT Wanlong
+4500,MRT Xinyi Anhe Sta.,MRT Xinhai
+1000,MRT Xinyi Anhe Sta.,MRT Zhongxiao Dunhua
+1000,MRT Xinyi Anhe Sta.,MRT Zhongxiao Fuxing
+2700,MRT Xinyi Anhe Sta.,MRT Zhongxiao Xinsheng
+3800,MRT Liuzhangli Sta.,MRT Chiang Kai-Shek Memorial Hall
+1700,MRT Liuzhangli Sta.,MRT Daan
+2600,MRT Liuzhangli Sta.,MRT Daan Park
+3100,MRT Liuzhangli Sta.,MRT Dongmen
+2200,MRT Liuzhangli Sta.,MRT Gongguan
+3100,MRT Liuzhangli Sta.,MRT Guting
+4200,MRT Liuzhangli Sta.,MRT Jingmei
+1000,MRT Liuzhangli Sta.,MRT Linguang
+3900,MRT Liuzhangli Sta.,MRT Nanjing Fuxing
+4700,MRT Liuzhangli Sta.,MRT Shandao Temple
+4700,MRT Liuzhangli Sta.,MRT Songjiang Nanjing
+2200,MRT Liuzhangli Sta.,MRT Sun Yat-Sen Memorial Hall
+1600,MRT Liuzhangli Sta.,MRT Taipei 101 World Trade Center
+2600,MRT Liuzhangli Sta.,MRT Taipei City Hall
+2800,MRT Liuzhangli Sta.,MRT Taipower Building
+1100,MRT Liuzhangli Sta.,MRT Technology Building
+3100,MRT Liuzhangli Sta.,MRT Wanlong
+3300,MRT Liuzhangli Sta.,MRT Xinhai
+1200,MRT Liuzhangli Sta.,MRT Xinyi Anhe
+2200,MRT Liuzhangli Sta.,MRT Zhongxiao Dunhua
+2200,MRT Liuzhangli Sta.,MRT Zhongxiao Fuxing
+3500,MRT Liuzhangli Sta.,MRT Zhongxiao Xinsheng
+2500,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Chiang Kai-Shek Memorial Hall
+1600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Daan
+1200,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Daan Park
+1200,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Dongmen
+3300,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Gongguan
+2600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Guting
+5900,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Jingmei
+4300,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Linguang
+3500,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Liuzhangli
+2000,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Nanjing Fuxing
+1100,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Shandao Temple
+1200,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Songjiang Nanjing
+2400,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Sun Yat-Sen Memorial Hall
+3400,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Taipei 101 World Trade Center
+3100,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Taipei City Hall
+2800,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Taipower Building
+2600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Technology Building
+4900,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Wanlong
+6200,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Xinhai
+2600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Xinyi Anhe
+1600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Zhongxiao Dunhua
+1600,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Zhongxiao Fuxing
+200,MRT Zhongxiao Xinsheng Sta.(Exit 3),MRT Zhongxiao Xinsheng
+2300,Xinyi & Jianguo Intersection,MRT Chiang Kai-Shek Memorial Hall
+500,Xinyi & Jianguo Intersection,MRT Daan
+180,Xinyi & Jianguo Intersection,MRT Daan Park
+800,Xinyi & Jianguo Intersection,MRT Dongmen
+2400,Xinyi & Jianguo Intersection,MRT Gongguan
+2100,Xinyi & Jianguo Intersection,MRT Guting
+5000,Xinyi & Jianguo Intersection,MRT Jingmei
+3200,Xinyi & Jianguo Intersection,MRT Linguang
+2500,Xinyi & Jianguo Intersection,MRT Liuzhangli
+2700,Xinyi & Jianguo Intersection,MRT Nanjing Fuxing
+2500,Xinyi & Jianguo Intersection,MRT Shandao Temple
+2600,Xinyi & Jianguo Intersection,MRT Songjiang Nanjing
+2900,Xinyi & Jianguo Intersection,MRT Sun Yat-Sen Memorial Hall
+2500,Xinyi & Jianguo Intersection,MRT Taipei 101 World Trade Center
+3400,Xinyi & Jianguo Intersection,MRT Taipei City Hall
+2100,Xinyi & Jianguo Intersection,MRT Taipower Building
+1300,Xinyi & Jianguo Intersection,MRT Technology Building
+4000,Xinyi & Jianguo Intersection,MRT Wanlong
+5000,Xinyi & Jianguo Intersection,MRT Xinhai
+1500,Xinyi & Jianguo Intersection,MRT Xinyi Anhe
+2000,Xinyi & Jianguo Intersection,MRT Zhongxiao Dunhua
+2000,Xinyi & Jianguo Intersection,MRT Zhongxiao Fuxing
+1300,Xinyi & Jianguo Intersection,MRT Zhongxiao Xinsheng
+4500,Renai & Yanji Intersection,MRT Chiang Kai-Shek Memorial Hall
+1600,Renai & Yanji Intersection,MRT Daan
+2500,Renai & Yanji Intersection,MRT Daan Park
+3100,Renai & Yanji Intersection,MRT Dongmen
+4000,Renai & Yanji Intersection,MRT Gongguan
+4500,Renai & Yanji Intersection,MRT Guting
+6000,Renai & Yanji Intersection,MRT Jingmei
+2500,Renai & Yanji Intersection,MRT Linguang
+1800,Renai & Yanji Intersection,MRT Liuzhangli
+2600,Renai & Yanji Intersection,MRT Nanjing Fuxing
+3700,Renai & Yanji Intersection,MRT Shandao Temple
+3600,Renai & Yanji Intersection,MRT Songjiang Nanjing
+600,Renai & Yanji Intersection,MRT Sun Yat-Sen Memorial Hall
+1100,Renai & Yanji Intersection,MRT Taipei 101 World Trade Center
+1200,Renai & Yanji Intersection,MRT Taipei City Hall
+4300,Renai & Yanji Intersection,MRT Taipower Building
+2600,Renai & Yanji Intersection,MRT Technology Building
+5000,Renai & Yanji Intersection,MRT Wanlong
+5000,Renai & Yanji Intersection,MRT Xinhai
+850,Renai & Yanji Intersection,MRT Xinyi Anhe
+700,Renai & Yanji Intersection,MRT Zhongxiao Dunhua
+700,Renai & Yanji Intersection,MRT Zhongxiao Fuxing
+2700,Renai & Yanji Intersection,MRT Zhongxiao Xinsheng
+3400,N.T.U.S.T,MRT Chiang Kai-Shek Memorial Hall
+2400,N.T.U.S.T,MRT Daan
+2900,N.T.U.S.T,MRT Daan Park
+3200,N.T.U.S.T,MRT Dongmen
+800,N.T.U.S.T,MRT Gongguan
+2500,N.T.U.S.T,MRT Guting
+2600,N.T.U.S.T,MRT Jingmei
+2300,N.T.U.S.T,MRT Linguang
+1600,N.T.U.S.T,MRT Liuzhangli
+4500,N.T.U.S.T,MRT Nanjing Fuxing
+4900,N.T.U.S.T,MRT Shandao Temple
+4900,N.T.U.S.T,MRT Songjiang Nanjing
+3900,N.T.U.S.T,MRT Sun Yat-Sen Memorial Hall
+3200,N.T.U.S.T,MRT Taipei 101 World Trade Center
+4200,N.T.U.S.T,MRT Taipei City Hall
+1600,N.T.U.S.T,MRT Taipower Building
+1600,N.T.U.S.T,MRT Technology Building
+1500,N.T.U.S.T,MRT Wanlong
+3800,N.T.U.S.T,MRT Xinhai
+2900,N.T.U.S.T,MRT Xinyi Anhe
+3500,N.T.U.S.T,MRT Zhongxiao Dunhua
+3500,N.T.U.S.T,MRT Zhongxiao Fuxing
+3700,N.T.U.S.T,MRT Zhongxiao Xinsheng
+3400,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Chiang Kai-Shek Memorial Hall
+700,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Daan
+1500,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Daan Park
+2000,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Dongmen
+3500,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Gongguan
+3500,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Guting
+5700,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Jingmei
+3400,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Linguang
+2500,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Liuzhangli
+1300,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Nanjing Fuxing
+2300,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Shandao Temple
+2200,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Songjiang Nanjing
+1500,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Sun Yat-Sen Memorial Hall
+2600,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Taipei 101 World Trade Center
+2300,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Taipei City Hall
+3300,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Taipower Building
+1600,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Technology Building
+4700,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Wanlong
+5200,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Xinhai
+1600,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Xinyi Anhe
+750,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Zhongxiao Dunhua
+750,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Zhongxiao Fuxing
+1300,MRT Zhongxiao Fuxing Sta.(Exit 2),MRT Zhongxiao Xinsheng
+3600,Xinyi & Dunhua Intersection,MRT Chiang Kai-Shek Memorial Hall
+600,Xinyi & Dunhua Intersection,MRT Daan
+1400,Xinyi & Dunhua Intersection,MRT Daan Park
+2000,Xinyi & Dunhua Intersection,MRT Dongmen
+3100,Xinyi & Dunhua Intersection,MRT Gongguan
+3400,Xinyi & Dunhua Intersection,MRT Guting
+5200,Xinyi & Dunhua Intersection,MRT Jingmei
+2100,Xinyi & Dunhua Intersection,MRT Linguang
+1300,Xinyi & Dunhua Intersection,MRT Liuzhangli
+2700,Xinyi & Dunhua Intersection,MRT Nanjing Fuxing
+3500,Xinyi & Dunhua Intersection,MRT Shandao Temple
+3500,Xinyi & Dunhua Intersection,MRT Songjiang Nanjing
+1600,Xinyi & Dunhua Intersection,MRT Sun Yat-Sen Memorial Hall
+1300,Xinyi & Dunhua Intersection,MRT Taipei 101 World Trade Center
+2200,Xinyi & Dunhua Intersection,MRT Taipei City Hall
+3100,Xinyi & Dunhua Intersection,MRT Taipower Building
+1400,Xinyi & Dunhua Intersection,MRT Technology Building
+4100,Xinyi & Dunhua Intersection,MRT Wanlong
+4300,Xinyi & Dunhua Intersection,MRT Xinhai
+260,Xinyi & Dunhua Intersection,MRT Xinyi Anhe
+1000,Xinyi & Dunhua Intersection,MRT Zhongxiao Dunhua
+1000,Xinyi & Dunhua Intersection,MRT Zhongxiao Fuxing
+2400,Xinyi & Dunhua Intersection,MRT Zhongxiao Xinsheng
+3800,Chengong Public Housing,MRT Chiang Kai-Shek Memorial Hall
+1100,Chengong Public Housing,MRT Daan
+2000,Chengong Public Housing,MRT Daan Park
+2600,Chengong Public Housing,MRT Dongmen
+2500,Chengong Public Housing,MRT Gongguan
+3000,Chengong Public Housing,MRT Guting
+4500,Chengong Public Housing,MRT Jingmei
+1600,Chengong Public Housing,MRT Linguang
+700,Chengong Public Housing,MRT Liuzhangli
+3300,Chengong Public Housing,MRT Nanjing Fuxing
+4100,Chengong Public Housing,MRT Shandao Temple
+4100,Chengong Public Housing,MRT Songjiang Nanjing
+2100,Chengong Public Housing,MRT Sun Yat-Sen Memorial Hall
+1800,Chengong Public Housing,MRT Taipei 101 World Trade Center
+2700,Chengong Public Housing,MRT Taipei City Hall
+2800,Chengong Public Housing,MRT Taipower Building
+850,Chengong Public Housing,MRT Technology Building
+3400,Chengong Public Housing,MRT Wanlong
+3600,Chengong Public Housing,MRT Xinhai
+900,Chengong Public Housing,MRT Xinyi Anhe
+1600,Chengong Public Housing,MRT Zhongxiao Dunhua
+1600,Chengong Public Housing,MRT Zhongxiao Fuxing
+3000,Chengong Public Housing,MRT Zhongxiao Xinsheng
+2300,JianGuo & Heping Intersection,MRT Chiang Kai-Shek Memorial Hall
+1300,JianGuo & Heping Intersection,MRT Daan
+950,JianGuo & Heping Intersection,MRT Daan Park
+1400,JianGuo & Heping Intersection,MRT Dongmen
+1700,JianGuo & Heping Intersection,MRT Gongguan
+1500,JianGuo & Heping Intersection,MRT Guting
+4300,JianGuo & Heping Intersection,MRT Jingmei
+2500,JianGuo & Heping Intersection,MRT Linguang
+1600,JianGuo & Heping Intersection,MRT Liuzhangli
+3400,JianGuo & Heping Intersection,MRT Nanjing Fuxing
+3100,JianGuo & Heping Intersection,MRT Shandao Temple
+3200,JianGuo & Heping Intersection,MRT Songjiang Nanjing
+3600,JianGuo & Heping Intersection,MRT Sun Yat-Sen Memorial Hall
+3000,JianGuo & Heping Intersection,MRT Taipei 101 World Trade Center
+4100,JianGuo & Heping Intersection,MRT Taipei City Hall
+1400,JianGuo & Heping Intersection,MRT Taipower Building
+800,JianGuo & Heping Intersection,MRT Technology Building
+3200,JianGuo & Heping Intersection,MRT Wanlong
+4200,JianGuo & Heping Intersection,MRT Xinhai
+2100,JianGuo & Heping Intersection,MRT Xinyi Anhe
+2700,JianGuo & Heping Intersection,MRT Zhongxiao Dunhua
+2700,JianGuo & Heping Intersection,MRT Zhongxiao Fuxing
+1900,JianGuo & Heping Intersection,MRT Zhongxiao Xinsheng
+2500,Taipei Public Library,MRT Chiang Kai-Shek Memorial Hall
+800,Taipei Public Library,MRT Daan
+750,Taipei Public Library,MRT Daan Park
+1300,Taipei Public Library,MRT Dongmen
+2100,Taipei Public Library,MRT Gongguan
+2000,Taipei Public Library,MRT Guting
+4700,Taipei Public Library,MRT Jingmei
+2700,Taipei Public Library,MRT Linguang
+1800,Taipei Public Library,MRT Liuzhangli
+3000,Taipei Public Library,MRT Nanjing Fuxing
+3000,Taipei Public Library,MRT Shandao Temple
+3000,Taipei Public Library,MRT Songjiang Nanjing
+3200,Taipei Public Library,MRT Sun Yat-Sen Memorial Hall
+2800,Taipei Public Library,MRT Taipei 101 World Trade Center
+3800,Taipei Public Library,MRT Taipei City Hall
+1800,Taipei Public Library,MRT Taipower Building
+750,Taipei Public Library,MRT Technology Building
+3700,Taipei Public Library,MRT Wanlong
+4400,Taipei Public Library,MRT Xinhai
+1800,Taipei Public Library,MRT Xinyi Anhe
+2300,Taipei Public Library,MRT Zhongxiao Dunhua
+2300,Taipei Public Library,MRT Zhongxiao Fuxing
+1800,Taipei Public Library,MRT Zhongxiao Xinsheng
+2900,NTU Information Bldg.,MRT Chiang Kai-Shek Memorial Hall
+1600,NTU Information Bldg.,MRT Daan
+1700,NTU Information Bldg.,MRT Daan Park
+2100,NTU Information Bldg.,MRT Dongmen
+1400,NTU Information Bldg.,MRT Gongguan
+2200,NTU Information Bldg.,MRT Guting
+3700,NTU Information Bldg.,MRT Jingmei
+2200,NTU Information Bldg.,MRT Linguang
+1500,NTU Information Bldg.,MRT Liuzhangli
+3700,NTU Information Bldg.,MRT Nanjing Fuxing
+3800,NTU Information Bldg.,MRT Shandao Temple
+3800,NTU Information Bldg.,MRT Songjiang Nanjing
+3600,NTU Information Bldg.,MRT Sun Yat-Sen Memorial Hall
+3000,NTU Information Bldg.,MRT Taipei 101 World Trade Center
+4000,NTU Information Bldg.,MRT Taipei City Hall
+1500,NTU Information Bldg.,MRT Taipower Building
+800,NTU Information Bldg.,MRT Technology Building
+2600,NTU Information Bldg.,MRT Wanlong
+3400,NTU Information Bldg.,MRT Xinhai
+2500,NTU Information Bldg.,MRT Xinyi Anhe
+3000,NTU Information Bldg.,MRT Zhongxiao Dunhua
+3000,NTU Information Bldg.,MRT Zhongxiao Fuxing
+2600,NTU Information Bldg.,MRT Zhongxiao Xinsheng
+4400,Wolong & Leye Intersection,MRT Chiang Kai-Shek Memorial Hall
+2400,Wolong & Leye Intersection,MRT Daan
+3100,Wolong & Leye Intersection,MRT Daan Park
+3600,Wolong & Leye Intersection,MRT Dongmen
+2400,Wolong & Leye Intersection,MRT Gongguan
+3600,Wolong & Leye Intersection,MRT Guting
+4400,Wolong & Leye Intersection,MRT Jingmei
+450,Wolong & Leye Intersection,MRT Linguang
+850,Wolong & Leye Intersection,MRT Liuzhangli
+4600,Wolong & Leye Intersection,MRT Nanjing Fuxing
+5300,Wolong & Leye Intersection,MRT Shandao Temple
+5300,Wolong & Leye Intersection,MRT Songjiang Nanjing
+2800,Wolong & Leye Intersection,MRT Sun Yat-Sen Memorial Hall
+2100,Wolong & Leye Intersection,MRT Taipei 101 World Trade Center
+3100,Wolong & Leye Intersection,MRT Taipei City Hall
+3100,Wolong & Leye Intersection,MRT Taipower Building
+1700,Wolong & Leye Intersection,MRT Technology Building
+3400,Wolong & Leye Intersection,MRT Wanlong
+2800,Wolong & Leye Intersection,MRT Xinhai
+2000,Wolong & Leye Intersection,MRT Xinyi Anhe
+2900,Wolong & Leye Intersection,MRT Zhongxiao Dunhua
+2900,Wolong & Leye Intersection,MRT Zhongxiao Fuxing
+4100,Wolong & Leye Intersection,MRT Zhongxiao Xinsheng
+1000,Jinshan & Aiguo Intersection,MRT Chiang Kai-Shek Memorial Hall
+1800,Jinshan & Aiguo Intersection,MRT Daan
+1000,Jinshan & Aiguo Intersection,MRT Daan Park
+300,Jinshan & Aiguo Intersection,MRT Dongmen
+2500,Jinshan & Aiguo Intersection,MRT Gongguan
+850,Jinshan & Aiguo Intersection,MRT Guting
+5100,Jinshan & Aiguo Intersection,MRT Jingmei
+4100,Jinshan & Aiguo Intersection,MRT Linguang
+3200,Jinshan & Aiguo Intersection,MRT Liuzhangli
+3400,Jinshan & Aiguo Intersection,MRT Nanjing Fuxing
+1900,Jinshan & Aiguo Intersection,MRT Shandao Temple
+2600,Jinshan & Aiguo Intersection,MRT Songjiang Nanjing
+4100,Jinshan & Aiguo Intersection,MRT Sun Yat-Sen Memorial Hall
+3800,Jinshan & Aiguo Intersection,MRT Taipei 101 World Trade Center
+4900,Jinshan & Aiguo Intersection,MRT Taipei City Hall
+1400,Jinshan & Aiguo Intersection,MRT Taipower Building
+2400,Jinshan & Aiguo Intersection,MRT Technology Building
+4000,Jinshan & Aiguo Intersection,MRT Wanlong
+6300,Jinshan & Aiguo Intersection,MRT Xinhai
+2800,Jinshan & Aiguo Intersection,MRT Xinyi Anhe
+3300,Jinshan & Aiguo Intersection,MRT Zhongxiao Dunhua
+3300,Jinshan & Aiguo Intersection,MRT Zhongxiao Fuxing
+1500,Jinshan & Aiguo Intersection,MRT Zhongxiao Xinsheng
+3600,Dunhua & Keelung Intersection,MRT Chiang Kai-Shek Memorial Hall
+1700,Dunhua & Keelung Intersection,MRT Daan
+2400,Dunhua & Keelung Intersection,MRT Daan Park
+2900,Dunhua & Keelung Intersection,MRT Dongmen
+1800,Dunhua & Keelung Intersection,MRT Gongguan
+2900,Dunhua & Keelung Intersection,MRT Guting
+3800,Dunhua & Keelung Intersection,MRT Jingmei
+1400,Dunhua & Keelung Intersection,MRT Linguang
+600,Dunhua & Keelung Intersection,MRT Liuzhangli
+3900,Dunhua & Keelung Intersection,MRT Nanjing Fuxing
+4600,Dunhua & Keelung Intersection,MRT Shandao Temple
+4600,Dunhua & Keelung Intersection,MRT Songjiang Nanjing
+2800,Dunhua & Keelung Intersection,MRT Sun Yat-Sen Memorial Hall
+2200,Dunhua & Keelung Intersection,MRT Taipei 101 World Trade Center
+3200,Dunhua & Keelung Intersection,MRT Taipei City Hall
+2300,Dunhua & Keelung Intersection,MRT Taipower Building
+1000,Dunhua & Keelung Intersection,MRT Technology Building
+2800,Dunhua & Keelung Intersection,MRT Wanlong
+3000,Dunhua & Keelung Intersection,MRT Xinhai
+1600,Dunhua & Keelung Intersection,MRT Xinyi Anhe
+2300,Dunhua & Keelung Intersection,MRT Zhongxiao Dunhua
+2300,Dunhua & Keelung Intersection,MRT Zhongxiao Fuxing
+3400,Dunhua & Keelung Intersection,MRT Zhongxiao Xinsheng

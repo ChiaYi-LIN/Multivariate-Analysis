@@ -1,0 +1,780 @@
+---
+title: "Assignment7_B04704016ªL®a¼Ý"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width=10, fig.height=8) 
+```
+```{r, include=FALSE}
+library( "dplyr" )
+library( "tidyr" )
+library( "gridExtra" )
+library( "loo" )
+library( "rethinking" )
+rm(list=ls())
+```
+
+# Question 1
+
+```{r, message=FALSE}
+# Load data
+data( "Hurricanes" )
+data <- Hurricanes; rm( Hurricanes )
+str( data )
+
+# Create data list for the stan model
+model.data <- list(
+  N = NROW( data ),
+  D = data$deaths,
+  C = data$category,
+  MP = scale( data$min_pressure )[ ,1],
+  DN = scale( data$damage_norm )[ ,1],
+  FE = data$female,
+  FY = data$femininity
+)
+str( model.data )
+
+# Model code
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+}
+parameters{
+  real a;
+}
+model{
+  vector[N] lamda;
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a;
+  }
+  D ~ poisson_log( lamda );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a;
+    log_lik[i] = poisson_log_lpmf( D[i] | lamda[i] );
+  }
+}
+"
+
+# Fit stan model with model code and model data
+fit.stan.0 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.0 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.0 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.0 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.0 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Draw posterior
+post.0 <- as.data.frame( fit.stan.0 )
+
+# Recreate lamda and simulate it with new data
+f_lamda <- function(x) exp(post.0$a)
+femininity_new <- seq( from=min(data$femininity) , to=max(data$femininity) , length.out=30 )
+
+lamda <- 
+  sapply(femininity_new, f_lamda) %>%
+  as_tibble() %>%
+  rename_all(function(x) femininity_new) %>%
+  mutate(Iter = row_number()) %>%
+  gather(femininity, deaths, -Iter) %>%
+  group_by(femininity) %>%
+  mutate(hpdi_l = quantile(deaths, probs = 0.055),
+         hpdi_h = quantile(deaths, probs = 0.945)) %>%
+  mutate(mu = mean(deaths)) %>%
+  ungroup() %>%
+  mutate(femininity = as.numeric(femininity))
+
+# Plot raw data and model estimate of lamda
+p <- ggplot() 
+p0 <- p + 
+  geom_point(data = data,
+             aes(femininity, deaths), 
+             shape = 1, color = 'dodgerblue') +
+  geom_ribbon(data = lamda,
+              aes(x = femininity, ymin = hpdi_l, ymax = hpdi_h), alpha = .5) +
+  geom_line(data = lamda,
+            aes(x = femininity, y = mu)) +
+  ggtitle("Intercept only")
+
+# Model code
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+}
+parameters{
+  real a;
+  real b_FY;
+}
+model{
+  vector[N] lamda;
+  b_FY ~ uniform( -15 , 15 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY * FY[i];
+  }
+  D ~ poisson_log( lamda );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY * FY[i];
+    log_lik[i] = poisson_log_lpmf( D[i] | lamda[i] );
+  }
+}
+"
+
+# Fit stan model with model code and model data
+fit.stan.1 <- stan( model_code=stan.model , data=model.data , 
+              chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.1 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.1 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.1 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.1 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Draw posterior
+post.1 <- as.data.frame( fit.stan.1 )
+
+# Recreate lamda and simulate it with new data
+f_lamda <- function(x) exp(post.1$a + post.1$b_FY * x)
+femininity_new <- seq( from=min(data$femininity) , to=max(data$femininity) , length.out=30 )
+
+lamda <- 
+  sapply(femininity_new, f_lamda) %>%
+  as_tibble() %>%
+  rename_all(function(x) femininity_new) %>%
+  mutate(Iter = row_number()) %>%
+  gather(femininity, deaths, -Iter) %>%
+  group_by(femininity) %>%
+  mutate(hpdi_l = quantile(deaths, probs = 0.055),
+         hpdi_h = quantile(deaths, probs = 0.945)) %>%
+  mutate(mu = mean(deaths)) %>%
+  ungroup() %>%
+  mutate(femininity = as.numeric(femininity))
+
+# Plot raw data and model estimate of lamda
+p <- ggplot() 
+p1 <- p + 
+  geom_point(data = data,
+             aes(femininity, deaths), 
+             shape = 1, color = 'dodgerblue') +
+  geom_ribbon(data = lamda,
+              aes(x = femininity, ymin = hpdi_l, ymax = hpdi_h), alpha = .5) +
+  geom_line(data = lamda,
+            aes(x = femininity, y = mu)) +
+  ggtitle("Femininity as predictor")
+
+grid.arrange(p0, p1, nrow = 2)
+```
+
+## Conclusion
+
+The association between femininity of names and deaths is quite obvious that if we add femininity as a predictor variable, it helps to predict deaths more properly. However, despite the model fits well on most of the cases, it fit poorly on the cases which have high variation.
+
+# Question 2
+
+```{r, message=FALSE}
+# Model code
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+}
+parameters{
+  real<lower=0> phi;
+  real a;
+  real b_FY;
+}
+model{
+  vector[N] lamda;
+  phi ~ cauchy( 0 , 2 );
+  b_FY ~ uniform( -30 , 30 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY * FY[i];
+  }
+  D ~ neg_binomial_2_log( lamda , phi );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY * FY[i];
+    log_lik[i] = neg_binomial_2_log_lpmf( D[i] | lamda[i] , phi );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.2 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.2 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.2 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.2 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.2 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Draw posterior
+post.2 <- as.data.frame( fit.stan.2 )
+
+# Recreate lamda and simulate it with new data
+f_lamda <- function(x) exp(post.2$a + post.2$b_FY * x)
+femininity_new <- seq( from=min(data$femininity) , to=max(data$femininity) , length.out=30 )
+
+lamda <- 
+  sapply(femininity_new, f_lamda) %>%
+  as_tibble() %>%
+  rename_all(function(x) femininity_new) %>%
+  mutate(Iter = row_number()) %>%
+  gather(femininity, deaths, -Iter) %>%
+  group_by(femininity) %>%
+  mutate(hpdi_l = quantile(deaths, probs = 0.055),
+         hpdi_h = quantile(deaths, probs = 0.945)) %>%
+  mutate(mu = mean(deaths)) %>%
+  ungroup() %>%
+  mutate(femininity = as.numeric(femininity))
+
+# Plot raw data and model estimate of lamda
+p <- ggplot() 
+p2 <- p + 
+  geom_point(data = data,
+             aes(femininity, deaths), 
+             shape = 1, color = 'dodgerblue') +
+  geom_ribbon(data = lamda,
+              aes(x = femininity, ymin = hpdi_l, ymax = hpdi_h), alpha = .5) +
+  geom_line(data = lamda,
+            aes(x = femininity, y = mu)) +
+  ggtitle("Femininity as predictor (gamma Poisson)")
+
+grid.arrange(p1, p2, nrow = 2)
+```
+
+## Conclusion
+
+Since the gamma-Poisson distribution assumes that the data has more variation, the coefficient of femininity would have wider range, and thus it overlaps zero.
+
+# Question 3
+
+```{r, message=FALSE}
+# Create data list for the stan model
+model.data <- list(
+  N = NROW( data ),
+  D = data$deaths,
+  C = data$category,
+  MP = scale( data$min_pressure )[ ,1],
+  DN = scale( data$damage_norm )[ ,1],
+  FE = data$female,
+  FY = scale( data$femininity )[ ,1]
+)
+str( model.data )
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+  real MP[N];
+}
+parameters{
+  real<lower=0> phi;
+  real a;
+  real b_FY_MP;
+}
+model{
+  vector[N] lamda;
+  phi ~ cauchy( 0 , 2 );
+  b_FY_MP ~ uniform( -30 , 30 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_MP * FY[i] * MP[i];
+  }
+  D ~ neg_binomial_2_log( lamda , phi );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_MP * FY[i] * MP[i];
+    log_lik[i] = neg_binomial_2_log_lpmf( D[i] | lamda[i] , phi );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.3 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.3 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.3 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.3 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.3 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+  real DN[N];
+}
+parameters{
+  real<lower=0> phi;
+  real a;
+  real b_FY_DN;
+}
+model{
+  vector[N] lamda;
+  phi ~ cauchy( 0 , 2 );
+  b_FY_DN ~ uniform( -30 , 30 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_DN * FY[i] * DN[i];
+  }
+  D ~ neg_binomial_2_log( lamda , phi );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_DN * FY[i] * DN[i];
+    log_lik[i] = neg_binomial_2_log_lpmf( D[i] | lamda[i] , phi );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.4 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.4 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.4 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.4 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.4 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+  real MP[N];
+  real DN[N];
+}
+parameters{
+  real<lower=0> phi;
+  real a;
+  real b_FY_MP_DN;
+}
+model{
+  vector[N] lamda;
+  phi ~ cauchy( 0 , 2 );
+  b_FY_MP_DN ~ uniform( -30 , 30 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_MP_DN * FY[i] * MP[i] * DN[i];
+  }
+  D ~ neg_binomial_2_log( lamda , phi );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_MP_DN * FY[i] * MP[i] * DN[i];
+    log_lik[i] = neg_binomial_2_log_lpmf( D[i] | lamda[i] , phi );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.5 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.5 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.5 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.5 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.5 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Calculate WAIC and compare models
+log_lik_3 <- extract_log_lik(fit.stan.3, merge_chains = FALSE)
+waic_3 <- waic(log_lik_3)
+log_lik_4 <- extract_log_lik(fit.stan.4, merge_chains = FALSE)
+waic_4 <- waic(log_lik_4)
+log_lik_5 <- extract_log_lik(fit.stan.5, merge_chains = FALSE)
+waic_5 <- waic(log_lik_5)
+compare_model <- loo::compare(waic_3, waic_4, waic_5)
+compare_model
+
+# Draw posterior
+post.4 <- as.data.frame( fit.stan.4 )
+data$femininity_scale <- scale( data$femininity )[ , 1]
+
+# Recreate lamda and simulate it with new data (Male)
+f_lamda <- function(x) exp(post.4$a + post.4$b_FY_DN * mean(data[ data$female==0 , ]$femininity_scale) * x)
+damage_norm_scale <- scale(data$damage_norm)[,1]
+damage_norm_new <- seq( from=min(damage_norm_scale) , to=max(damage_norm_scale) , length.out=30 )
+
+lamda <- 
+  sapply(damage_norm_new, f_lamda) %>%
+  as_tibble() %>%
+  rename_all(function(x) damage_norm_new) %>%
+  mutate(Iter = row_number()) %>%
+  gather(damage_norm, deaths, -Iter) %>%
+  group_by(damage_norm) %>%
+  mutate(hpdi_l = quantile(deaths, probs = 0.055),
+         hpdi_h = quantile(deaths, probs = 0.945)) %>%
+  mutate(mu = mean(deaths)) %>%
+  ungroup() %>%
+  mutate(damage_norm = as.numeric(damage_norm))
+
+# Plot raw data and model estimate of lamda
+p <- ggplot() 
+p4_m <- p + 
+  geom_ribbon(data = lamda,
+              aes(x = damage_norm, ymin = hpdi_l, ymax = hpdi_h), alpha = .5) +
+  geom_line(data = lamda,
+            aes(x = damage_norm, y = mu)) +
+  ggtitle("Counterfactual Plot (Male)")
+
+# Recreate lamda and simulate it with new data (Female)
+f_lamda <- function(x) exp(post.4$a + post.4$b_FY_DN * mean(data[ data$female==1 , ]$femininity_scale) * x)
+damage_norm_scale <- scale(data$damage_norm)[,1]
+damage_norm_new <- seq( from=min(damage_norm_scale) , to=max(damage_norm_scale) , length.out=30 )
+
+lamda <- 
+  sapply(damage_norm_new, f_lamda) %>%
+  as_tibble() %>%
+  rename_all(function(x) damage_norm_new) %>%
+  mutate(Iter = row_number()) %>%
+  gather(damage_norm, deaths, -Iter) %>%
+  group_by(damage_norm) %>%
+  mutate(hpdi_l = quantile(deaths, probs = 0.055),
+         hpdi_h = quantile(deaths, probs = 0.945)) %>%
+  mutate(mu = mean(deaths)) %>%
+  ungroup() %>%
+  mutate(damage_norm = as.numeric(damage_norm))
+
+# Plot raw data and model estimate of lamda
+p <- ggplot() 
+p4_f <- p + 
+  geom_ribbon(data = lamda,
+              aes(x = damage_norm, ymin = hpdi_l, ymax = hpdi_h), alpha = .5) +
+  geom_line(data = lamda,
+            aes(x = damage_norm, y = mu)) +
+  ggtitle("Counterfactual Plot (Female)")
+
+grid.arrange(p4_m, p4_f, nrow = 2)
+```
+
+## Conclusion
+
+By comparing WAIC, we could know that the model which considers the interaction between femininity and damage_norm is the mmost plausible. Besides, from the counterfactual prediction plots, we also found that the effect sizes are quite obvious when contrasting the predictions of hurricanes with masculine and feminine names.
+
+# Question 4
+
+```{r, message=FALSE}
+# Calculate logarithm of damage_norm
+data$log_damage_norm <- log( data$damage_norm )
+
+# Create data list for the stan model
+model.data <- list(
+  N = NROW( data ),
+  D = data$deaths,
+  C = data$category,
+  MP = scale( data$min_pressure )[,1],
+  DN = scale( data$damage_norm )[,1],
+  FE = data$female,
+  FY = scale( data$femininity )[ ,1],
+  LDN = data$log_damage_norm
+)
+str( model.data )
+
+stan.model <- "
+data{
+  int<lower=1> N;
+  int D[N];
+  real FY[N];
+  real LDN[N];
+}
+parameters{
+  real<lower=0> phi;
+  real a;
+  real b_FY_LDN;
+}
+model{
+  vector[N] lamda;
+  phi ~ cauchy( 0 , 2 );
+  b_FY_LDN ~ uniform( -30 , 30 );
+  a ~ uniform( -30, 30 );
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_LDN * FY[i] * LDN[i];
+  }
+  D ~ neg_binomial_2_log( lamda , phi );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] lamda;
+  for ( i in 1:N ) {
+    lamda[i] = a + b_FY_LDN * FY[i] * LDN[i];
+    log_lik[i] = neg_binomial_2_log_lpmf( D[i] | lamda[i] , phi );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.6 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Traceplot
+traceplot( fit.stan.6 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Show results
+print( fit.stan.6 , probs=c(0.055,0.945) , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Plot coeftab
+plot( fit.stan.6 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Pairs plot
+pairs( fit.stan.6 , pars=c("log_lik","lamda","lp__"), include=FALSE )
+
+# Calculate WAIC and compare models
+log_lik_6 <- extract_log_lik(fit.stan.6, merge_chains = FALSE)
+waic_6 <- waic(log_lik_6)
+compare_model <- loo::compare(waic_4, waic_6)
+compare_model
+```
+
+## Conclusion
+
+By comparing WAIC values, since the elpd_diff value is negative, we should consider that the model fit.stan.4 is better. It implies that mortality increases linearly with a linear increase in storm strength. Thus, when predicting deaths, we should use damage_norm directly instead of logarithm.
+
+# Question 5
+
+```{r, message=FALSE}
+# Load data
+data( "bangladesh" )
+data <- bangladesh; rm( bangladesh )
+str( data )
+
+sort(unique(data$district))
+data$district_id <- as.integer( as.factor( data$district ) )
+sort(unique(data$district_id))
+
+# Create data list for the stan model
+model.data <- list(
+  N = NROW( data ),
+  N_D = max(data$district_id),
+  W = data$woman,
+  UC = data$use.contraception,
+  LC = data$living.children,
+  AC = scale( data$age.centered )[ ,1],
+  U = data$urban,
+  D = data$district_id
+)
+str( model.data )
+
+# Traditional fixed-effects model
+stan.model <- "
+data{
+  int<lower=1> N;
+  int<lower=1> N_D;
+  int D[N];
+  int UC[N];
+}
+parameters{
+  vector[N_D] a;
+}
+model{
+  vector[N] p;
+  a ~ normal( 0 , 10 );
+  for ( i in 1:N ) {
+    p[i] = a[D[i]];
+  }
+  UC ~ binomial_logit( 1 , p );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] p;
+  for ( i in 1:N ) {
+    p[i] = a[D[i]];
+    log_lik[i] = binomial_logit_lpmf( UC[i] | 1 , p[i] );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.7 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Show results
+print( fit.stan.7 , probs=c(0.055,0.945) , pars=c("p","log_lik","lamda","lp__"), include=FALSE )
+
+# Calculate contraception use rate of original data
+data.con.rate <- data %>% 
+  group_by(district_id) %>% 
+  summarise(
+    count=n(), 
+    total_use_contraception=sum(use.contraception),
+    rate=total_use_contraception/count
+  ) %>% 
+  as.data.frame() %>%
+  mutate(
+    x_label = reorder(as.factor(paste0('Id=',district_id,'//n=',count)), count)
+  )
+
+# Draw posterior
+post.7 <- as.data.frame( fit.stan.7 )[,1:60]
+
+p_mean <- as.data.frame( logistic( apply( post.7 , 2 , mean ) ) )
+colnames(p_mean) <- c("mu")
+p_mean$district_id <- seq( from=1 , to=60 )
+p_mean <- as.data.frame( p_mean )
+
+p_PI <- t( as.data.frame( logistic(apply( post.7 , 2, PI , prob=0.89 ) ) ) )
+district_id <- seq( from=1 , to=60 )
+p_PI <- cbind( p_PI , newColumn=district_id )
+colnames(p_PI) <- c("hpdi_l","hpdi_h","district_id")
+p_PI <- as.data.frame( p_PI )
+
+# Plot raw data and model estimate of each district
+p <- ggplot() 
+p7 <- p + 
+  geom_point(data = data.con.rate,
+             aes(district_id, rate), 
+             shape = 1, color = 'dodgerblue') +
+  scale_x_discrete(limits = data.con.rate$x_label) + 
+  theme(axis.text.x = element_text(angle = 90)) +
+  geom_point(data = p_mean,
+             aes(district_id, mu), 
+             shape = 1, color = 'red') +
+  geom_segment(data = p_PI,
+              aes(x = district_id, y = hpdi_l, xend = district_id, yend = hpdi_h), alpha = .5) +
+  ggtitle("Prediction (Traditional fixed-effects model)")
+
+# Multilevel model
+stan.model <- "
+data{
+  int<lower=1> N;
+  int<lower=1> N_D;
+  int D[N];
+  int UC[N];
+}
+parameters{
+  real mu;
+  real<lower=0> sigma;
+  vector[N_D] a;
+}
+model{
+  vector[N] p;
+  sigma ~ exponential( 1 );
+  mu ~ normal( 0 , 10 );
+  a ~ normal( mu , sigma );
+  for ( i in 1:N ) {
+    p[i] = a[D[i]];
+  }
+  UC ~ binomial_logit( 1 , p );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] p;
+  for ( i in 1:N ) {
+    p[i] = a[D[i]];
+    log_lik[i] = binomial_logit_lpmf( UC[i] | 1 , p[i] );
+  }
+}
+"
+# Fit stan model with model code and model data
+fit.stan.8 <- stan( model_code=stan.model , data=model.data , 
+                    chains=4 , cores=4 , iter=2000 )
+
+# Show results
+print( fit.stan.8 , probs=c(0.055,0.945) , pars=c("p","log_lik","lamda","lp__"), include=FALSE )
+
+# Draw posterior
+post.8 <- as.data.frame( fit.stan.8 )[,1:60]
+
+p_mean <- as.data.frame( logistic( apply( post.8 , 2 , mean ) ) )
+colnames(p_mean) <- c("mu")
+p_mean$district_id <- seq( from=1 , to=60 )
+p_mean <- as.data.frame( p_mean )
+
+p_PI <- t( as.data.frame( logistic(apply( post.8 , 2, PI , prob=0.89 ) ) ) )
+district_id <- seq( from=1 , to=60 )
+p_PI <- cbind( p_PI , newColumn=district_id )
+colnames(p_PI) <- c("hpdi_l","hpdi_h","district_id")
+p_PI <- as.data.frame( p_PI )
+
+# Plot raw data and model estimate of each district
+p <- ggplot() 
+p8 <- p + 
+  geom_point(data = data.con.rate,
+             aes(district_id, rate), 
+             shape = 1, color = 'dodgerblue') +
+  scale_x_discrete(limits = data.con.rate$x_label) + 
+  theme(axis.text.x = element_text(angle = 90)) +
+  geom_point(data = p_mean,
+             aes(district_id, mu), 
+             shape = 1, color = 'red') +
+  geom_segment(data = p_PI,
+               aes(x = district_id, y = hpdi_l, xend = district_id, yend = hpdi_h), alpha = .5) +
+  ggtitle("Prediction (Multilevel model)")
+
+grid.arrange(p7, p8, nrow = 2)
+
+# Calculate WAIC and compare models
+log_lik_7 <- extract_log_lik(fit.stan.7, merge_chains = FALSE)
+waic_7 <- waic(log_lik_7)
+log_lik_8 <- extract_log_lik(fit.stan.8, merge_chains = FALSE)
+waic_8 <- waic(log_lik_8)
+compare_model <- loo::compare(waic_7, waic_8)
+compare_model
+```
+
+## Conclusion
+
+By comparing WAIC values, the multilevel model seems to be better. However, from the prediction plots, we can see that in some districts with less data, the model could fit badly, compared to the fixed-effects model.

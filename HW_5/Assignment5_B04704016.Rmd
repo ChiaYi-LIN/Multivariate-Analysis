@@ -1,0 +1,231 @@
+---
+title: "Assignment5_B04704016ªL®a¼Ý"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width=10, fig.height=8) 
+```
+```{r, include=FALSE}
+library( "MASS" )
+library( "loo" )
+library( "bayesplot" )
+library( "GGally" )
+library( "rethinking" )
+rm(list=ls())
+```
+
+# Question 1 (a)
+
+```{r, message=FALSE}
+# Load data
+data( "eagles" )
+data <- eagles; rm( eagles )
+
+# Set dummy variables
+data$P <- ifelse( data$P=="L" , 1 , 0 )
+data$A <- ifelse( data$A=="A" , 1 , 0 )
+data$V <- ifelse( data$V=="L" , 1 , 0 )
+
+# Create data list for the stan model
+data.model <- list(
+  N = NROW( data ),
+  y = data$y,
+  n = data$n,
+  P = data$P,
+  A = data$A,
+  V = data$V
+)
+str( data.model )
+
+# Model code
+model.a.stan <- "
+data{
+  int<lower=1> N;
+  int y[N];
+  int n[N];
+  real P[N];
+  real A[N];
+  real V[N];
+}
+parameters{
+  real a;
+  real bP;
+  real bA;
+  real bV;
+}
+model{
+  vector[N] p;
+  bV ~ normal( 0 , 5 );
+  bA ~ normal( 0 , 5 );
+  bP ~ normal( 0 , 5 );
+  a ~ normal( 0 , 10 );
+  for ( i in 1:N ) {
+    p[i] = a + bP * P[i] + bA * A[i] + bV * V[i];
+    p[i] = inv_logit(p[i]);
+  }
+  y ~ binomial( n , p );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] p;
+  vector[N] c;
+  for ( i in 1:N ) {
+    p[i] = a + bP * P[i] + bA * A[i] + bV * V[i];
+    p[i] = inv_logit(p[i]);
+    c[i] = binomial_rng( n[i] , p[i] );
+    log_lik[i] = binomial_lpmf( y[i] | n[i] , p[i] );
+  }
+}
+"
+
+# Fit stan model with model code and model data
+fit.a.stan <- stan( model_code=model.a.stan , data=data.model , 
+              chains=4 , cores=4 , iter=1000 )
+
+# Show results
+print( fit.a.stan , probs=c(0.055,0.945) , pars=c("a","bP","bA","bV") )
+
+# Plot coeftab
+plot( fit.a.stan , pars=c("a","bP","bA","bV") )
+
+# Pairs plot
+pairs( fit.a.stan , pars=c("a","bP","bA","bV") )
+ggpairs( data=as.data.frame( fit.a.stan ), columns=c(1:4))
+
+# Traceplot
+extract_post <- rstan::extract( fit.a.stan , inc_warmup=TRUE , permuted=FALSE)
+post_traceplot <- mcmc_trace( extract_post , n_warmup=0 , pars=c("a","bP","bA","bV"),
+                facet_args=list( nrow=2 , labeller=label_parsed ) )
+post_traceplot
+
+# Fit quadratic approximation model
+fit.a.quap <- map(
+  alist(
+    y ~ dbinom(n, p),
+    logit(p) <- a + bP*P + bA*A + bV*V,
+    a ~ dnorm(0, 10),
+    bP ~ dnorm(0, 5),
+    bA ~ dnorm(0, 5),
+    bV ~ dnorm(0, 5)
+  ),
+  data=data
+)
+
+# Show results
+precis( fit.a.quap )
+
+# Plot coeftab
+plot( coeftab( fit.a.quap ) )
+
+# Pairs plot
+pairs( fit.a.quap )
+```
+
+## Conclusion
+
+From the pairs plot of the stan model, we can see the skewed distribution for both bP and bV. On the other hand, for the same parameters, the quadratic qpproximation model shows symmetric distribution. We would prefer the stan model as it is closer to what we expect.
+
+# Question 1 (b)
+
+The predicted probability of success and the 89% interval for each row of data are as follows:
+
+```{r, message=FALSE}
+p <- as.data.frame(fit.a.stan)[,13:20]
+p.mean <- apply( p , 2 , mean )
+p.PI <- apply( p, 2, PI , prob=0.89 )
+data$prob_success <- data$y / data$n
+plot( data$prob_success , col=50 , ylab="probability of success" , xlab="each case of data (P.A.V)" , xlim=c(0,9) , ylim=c(0,1) , pch=16 , xaxt="n" )
+axis( 1 , at=1:8 , labels=c("L.A.L","L.A.S","L.I.L","L.I.S","S.A.L","S.A.S","S.I.L","S.I.S") )
+points( 1:8 , p.mean )
+for ( i in 1:8 ) lines( c(i, i), p.PI[,i] )
+```
+
+The predicted success count and the 89% interval for each row of data are as follows:
+
+```{r, message=FALSE}
+c <- as.data.frame(fit.a.stan)[,21:28]
+c.mean <- apply( c , 2 , mean )
+c.PI <- apply( c, 2, PI , prob=0.89 )
+plot( data$y , col=50 , ylab="count of success" , xlab="each case of data (P.A.V)" , xlim=c(0,9) , ylim=c(0,30) , pch=16 , xaxt="n" )
+axis( 1 , at=1:8 , labels=c("L.A.L","L.A.S","L.I.L","L.I.S","S.A.L","S.A.S","S.I.L","S.I.S") )
+points( 1:8 , c.mean )
+for ( i in 1:8 ) lines( c(i, i), c.PI[,i] )
+```
+
+## Conclusion
+
+From the results, it shows that the probability of success could depend on pirate eagle size, victim eagle size and the age of pirate eagle. Besides, the success count is even more relative to the age of pirate eagle.
+
+# Question 1 (c)
+
+```{r, message=FALSE}
+model.c.stan <- "
+data{
+  int<lower=1> N;
+  int y[N];
+  int n[N];
+  real P[N];
+  real A[N];
+  real V[N];
+}
+parameters{
+  real a;
+  real bP;
+  real bA;
+  real bV;
+  real bPA;
+}
+model{
+  vector[N] p;
+  bPA ~ normal( 0 , 5 );
+  bV ~ normal( 0 , 5 );
+  bA ~ normal( 0 , 5 );
+  bP ~ normal( 0 , 5 );
+  a ~ normal( 0 , 10 );
+  for ( i in 1:N ) {
+    p[i] = a + bP * P[i] + bA * A[i] + bV * V[i] + bPA * P[i] * A[i];
+    p[i] = inv_logit(p[i]);
+  }
+  y ~ binomial( n , p );
+}
+generated quantities{
+  vector[N] log_lik;
+  vector[N] p;
+  for ( i in 1:N ) {
+    p[i] = a + bP * P[i] + bA * A[i] + bV * V[i] + bPA * P[i] * A[i];
+    p[i] = inv_logit(p[i]);
+    log_lik[i] = binomial_lpmf( y[i] | n[i] , p[i] );
+  }
+}
+"
+
+fit.c.stan <- stan( model_code=model.c.stan , data=data.model , 
+               chains=4 , cores=4 , iter=1000 )
+print( fit.c.stan , probs=c(0.055,0.945) , pars=c("a","bP","bA","bV","bPA") )
+plot( fit.c.stan , pars=c("a","bP","bA","bV","bPA") )
+
+pairs( fit.c.stan , pars=c("a","bP","bA","bV","bPA") )
+ggpairs( data=as.data.frame( fit.c.stan ), columns=c(1:5))
+
+extract_post <- rstan::extract( fit.c.stan , inc_warmup=TRUE , permuted=FALSE)
+post_traceplot <- mcmc_trace( extract_post , n_warmup=0 , pars=c("a","bP","bA","bV","bPA"),
+                              facet_args=list( nrow=2 , labeller=label_parsed ) )
+post_traceplot
+
+# Compute WAIC for both stan models
+ll.a.stan <- extract_log_lik(fit.a.stan, merge_chains=FALSE)
+reff.a.stan <- relative_eff(exp(ll.a.stan))
+waic.a.stan <- waic(ll.a.stan, r_eff=reff.a.stan, cores=4)
+ll.c.stan <- extract_log_lik(fit.c.stan, merge_chains=FALSE)
+reff.c.stan <- relative_eff(exp(ll.c.stan))
+waic.c.stan <- waic(ll.c.stan, r_eff=reff.c.stan, cores=4)
+
+# Compare WAICs
+loo::compare(waic.a.stan, waic.c.stan)
+```
+
+## Conclusion
+
+Since the elpd_diff and se values are both positive, it implies that the latter model, which considers the interaction betwen variables P and A, predicts better than the other model.
